@@ -1,13 +1,19 @@
-import { createStackNavigator } from 'react-navigation-stack'
-import { createAppContainer } from 'react-navigation'
+import {createStackNavigator} from 'react-navigation-stack';
+import {createAppContainer} from 'react-navigation';
 
-import DrinksList from '../screens/drinkslist/DrinksList'
-import HomePage from '../screens/homepage/HomePage'
+import DrinksList from '../screens/drinkslist/index';
+import HomePage from '../screens/homepage/index';
 
-
-const MainNavigator = createStackNavigator({
+const MainNavigator = createStackNavigator(
+  {
     HomePage: HomePage,
-    DrinksList: DrinksList
-})
+    DrinksList: DrinksList,
+  },
+  {
+    defaultNavigationOptions: {
+      headerShown: false,
+    },
+  },
+);
 
-export default createAppContainer(MainNavigator)
+export default createAppContainer(MainNavigator);
