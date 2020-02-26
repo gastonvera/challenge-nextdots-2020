@@ -48,4 +48,13 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(DrinksList);
+const mapDispatchToProps = dispatch => {
+  return {
+    getDrinks: (data, val, error) => dispatch(getDrinks(data, val, error)),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(DrinksList);
